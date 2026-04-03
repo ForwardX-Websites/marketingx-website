@@ -1,10 +1,12 @@
 /**
- * Main JS — Site-brede functionaliteit
+ * Main JS — MarketingX
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
+  initScrollReveal();
+  initHeaderScroll();
 });
 
 /**
@@ -20,12 +22,9 @@ function initMobileMenu() {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", !isOpen);
     nav.classList.toggle("is-open");
-
-    // Voorkom scrollen als menu open is
     document.body.style.overflow = isOpen ? "" : "hidden";
   });
 
-  // Sluit menu bij klik op link
   nav.querySelectorAll(".site-nav__link").forEach((link) => {
     link.addEventListener("click", () => {
       toggle.setAttribute("aria-expanded", "false");
@@ -36,7 +35,7 @@ function initMobileMenu() {
 }
 
 /**
- * Smooth scroll voor anker-links
+ * Smooth scroll for anchor links
  */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -48,4 +47,58 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/**
+ * Scroll-triggered reveal animations
+ */
+function initScrollReveal() {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion) {
+    document.querySelectorAll(".reveal").forEach((el) => {
+      el.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -40px 0px",
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+/**
+ * Header background on scroll
+ */
+function initHeaderScroll() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 10) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 }

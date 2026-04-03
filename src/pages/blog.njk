@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+pageTitle: Blog
+pageDescription: "Inzichten over lokale marketing, SEO, webdesign en digitale groei"
+permalink: /blog/
+---
+
+<section class="section blog-listing__header">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__eyebrow">Blog</span>
+      <h1>Inzichten & artikelen</h1>
+      <p class="section__subtitle">
+        Kennis en praktische tips over lokale marketing, SEO, webdesign en
+        de nieuwste ontwikkelingen in online marketing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section blog-listing" style="padding-top: 0;">
+  <div class="container">
+    {% if collections.blog.length %}
+    <div class="grid grid--3 reveal-stagger">
+      {% for post in collections.blog %}
+      <a href="{{ post.url }}" class="blog-card reveal" style="--stagger-index: {{ loop.index0 }}">
+        <div class="blog-card__image"></div>
+        <div class="blog-card__body">
+          <span class="blog-card__meta">{{ post.date | dateFormat }}</span>
+          <h3 class="blog-card__title">{{ post.data.title }}</h3>
+          <p class="blog-card__excerpt">{{ post.data.description }}</p>
+          <span class="blog-card__link">
+            Lees meer
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center reveal">
+      <p>Binnenkort verschijnen hier onze eerste artikelen.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

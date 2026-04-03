@@ -1,64 +1,132 @@
 ---
 layout: layouts/base.njk
 pageTitle: Home
-pageDescription: "Welkom bij Klantnaam — korte beschrijving voor SEO"
+pageDescription: "MarketingX — De meest uitmuntende online marketing oplossingen en software voor lokale bedrijven"
 permalink: /
 ---
 
 {# ============================================
-   HERO SECTIE
+   HERO
    ============================================ #}
-<section class="hero section">
+<section class="hero">
+  <div class="hero__bg">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+  </div>
+
   <div class="container">
     <div class="hero__content">
-      <h1>Welkom bij {{ site.name }}</h1>
-      <p class="section__subtitle">
-        Hier komt een krachtige subkop die de klant aanspreekt
-        en direct duidelijk maakt wat het bedrijf doet.
+      <span class="hero__eyebrow">Marketing · Software · Design</span>
+      <h1 class="hero__title">Innovatieve concepten.<br>Resultaat dat <span class="highlight">werkt</span>.</h1>
+      <p class="hero__subtitle">
+        Wij bouwen uitmuntende online marketing oplossingen en software
+        die lokale bedrijven écht laten groeien. Webdesign, lokale SEO
+        en review automation — alles onder één dak.
       </p>
       <div class="hero__actions">
-        <a href="/contact/" class="btn btn--primary">Neem contact op</a>
-        <a href="/diensten/" class="btn btn--outline">Bekijk diensten</a>
+        <a href="/contact/" class="btn btn--accent">Start het gesprek</a>
+        <a href="#merken" class="btn btn--outline">Onze merken <span class="btn__arrow">&darr;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+{# ============================================
+   MERKEN
+   ============================================ #}
+<section class="section brands" id="merken">
+  <div class="container">
+    <div class="section__header section__header--center reveal">
+      <span class="section__eyebrow">Onze merken</span>
+      <h2>Drie merken, één missie</h2>
+      <p class="section__subtitle">
+        Elk merk is gespecialiseerd in wat het beste doet. Samen vormen ze
+        een compleet ecosysteem voor lokale online groei.
+      </p>
+    </div>
+
+    <div class="grid grid--3 reveal-stagger">
+      {% for brand in site.brands %}
+      <div class="brand-card reveal" style="--stagger-index: {{ loop.index0 }}; --brand-color: {{ brand.color }}">
+        <div class="brand-card__icon">
+          {% if brand.icon == "arrow-right" %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          {% elif brand.icon == "map-pin" %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {% elif brand.icon == "message-circle" %}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          {% endif %}
+        </div>
+        <h3 class="brand-card__name">{{ brand.name }}</h3>
+        <span class="brand-card__tagline">{{ brand.tagline }}</span>
+        <p class="brand-card__description">{{ brand.description }}</p>
+        <span class="brand-card__link">
+          Meer info
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ============================================
+   MISSIE
+   ============================================ #}
+<section class="section mission">
+  <div class="container">
+    <div class="mission__grid">
+      <div class="reveal">
+        <span class="section__eyebrow">Onze missie</span>
+        <h2>Lokale bedrijven laten excelleren in het digitale landschap</h2>
+        <p>
+          Wij geloven dat elk lokaal bedrijf recht heeft op marketing van
+          het hoogste niveau. Geen one-size-fits-all templates, maar
+          doordachte oplossingen die écht impact maken op je groei.
+        </p>
+        <p>
+          Door onze eigen software te ontwikkelen en data-gedreven te werken,
+          leveren wij resultaten die traditionele bureaus simpelweg niet kunnen evenaren.
+        </p>
+      </div>
+      <div class="reveal" style="--stagger-index: 1">
+        <div class="mission__stats">
+          <div class="mission__stat">
+            <span class="mission__stat-number">3</span>
+            <span class="mission__stat-label">Gespecialiseerde merken</span>
+          </div>
+          <div class="mission__stat">
+            <span class="mission__stat-number">100%</span>
+            <span class="mission__stat-label">Lokale focus</span>
+          </div>
+          <div class="mission__stat">
+            <span class="mission__stat-number">AI</span>
+            <span class="mission__stat-label">Gedreven werkwijze</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 {# ============================================
-   USP SECTIE
+   CTA
    ============================================ #}
-<section class="section section--alt">
-  <div class="container">
-    <div class="section__header">
-      <h2>Waarom {{ site.name }}?</h2>
-      <p class="section__subtitle">Pas deze tekst aan met de USPs van de klant.</p>
-    </div>
-    <div class="grid grid--3">
-      <div class="card">
-        <h3>USP 1</h3>
-        <p>Beschrijving van het eerste unieke verkooppunt.</p>
-      </div>
-      <div class="card">
-        <h3>USP 2</h3>
-        <p>Beschrijving van het tweede unieke verkooppunt.</p>
-      </div>
-      <div class="card">
-        <h3>USP 3</h3>
-        <p>Beschrijving van het derde unieke verkooppunt.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{# ============================================
-   CTA SECTIE
-   ============================================ #}
-<section class="section">
-  <div class="container">
-    <div class="section__header">
-      <h2>Klaar om te beginnen?</h2>
-      <p class="section__subtitle">Neem vrijblijvend contact op voor een gesprek.</p>
-      <a href="/contact/" class="btn btn--primary">Contact opnemen</a>
+<section class="section cta-band">
+  <div class="container container--narrow">
+    <div class="reveal" style="text-align: center;">
+      <span class="section__eyebrow" style="color: var(--color-orange);">Klaar om te groeien?</span>
+      <h2>Laten we samen bouwen aan jouw lokale succes</h2>
+      <p class="section__subtitle" style="max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
+        Neem vrijblijvend contact op voor een gesprek over de mogelijkheden.
+      </p>
+      <a href="/contact/" class="btn btn--primary">Start het gesprek</a>
     </div>
   </div>
 </section>

@@ -3,16 +3,18 @@
     <div class="site-footer__grid">
 
       <div class="site-footer__col">
-        <span class="site-footer__brand">{{ site.name }}</span>
+        <div class="site-footer__brand">
+          <span class="site-footer__brand-name">MarketingX</span>
+        </div>
         <p class="site-footer__description">{{ site.description }}</p>
       </div>
 
       <div class="site-footer__col">
-        <h3 class="site-footer__heading">Contact</h3>
+        <h3 class="site-footer__heading">Merken</h3>
         <ul class="site-footer__list">
-          <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
-          <li><a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a></li>
-          <li>{{ site.contact.address.street }}, {{ site.contact.address.zip }} {{ site.contact.address.city }}</li>
+          {% for brand in site.brands %}
+          <li><span>{{ brand.name }}</span></li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -20,9 +22,18 @@
         <h3 class="site-footer__heading">Navigatie</h3>
         <ul class="site-footer__list">
           <li><a href="/">Home</a></li>
-          <li><a href="/over-ons/">Over ons</a></li>
-          <li><a href="/diensten/">Diensten</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/werken-bij/">Werken bij</a></li>
           <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Contact</h3>
+        <ul class="site-footer__list">
+          <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+          <li><a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a></li>
+          <li>{{ site.contact.address.street }}<br>{{ site.contact.address.zip }} {{ site.contact.address.city }}</li>
         </ul>
       </div>
 

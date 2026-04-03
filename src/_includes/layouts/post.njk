@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="section">
+  <div class="container">
+    <div class="post-header">
+      <span class="post-header__meta">{{ date | dateFormat }}</span>
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+</section>
+
+<article class="post-content">
+  {{ content | safe }}
+</article>
+
+<section class="cta-band section">
+  <div class="container container--narrow">
+    <div class="reveal">
+      <h2>Meer weten?</h2>
+      <p class="section__subtitle" style="max-width: 500px; margin: var(--space-md) auto var(--space-xl);">
+        Neem contact op en ontdek hoe wij jouw lokale zichtbaarheid kunnen versterken.
+      </p>
+      <a href="/contact/" class="btn btn--primary">Contact opnemen</a>
+    </div>
+  </div>
+</section>

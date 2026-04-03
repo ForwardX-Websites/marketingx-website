@@ -1,38 +1,62 @@
 {
-  "name": "Klantnaam",
-  "url": "https://www.klantnaam.nl",
-  "description": "Korte beschrijving van het bedrijf voor SEO",
+  "name": "MarketingX",
+  "url": "https://www.marketingx.nl",
+  "description": "De meest uitmuntende online marketing oplossingen en software voor lokale bedrijven",
   "language": "nl",
 
   "contact": {
-    "email": "info@klantnaam.nl",
-    "phone": "+31 6 12345678",
+    "email": "hello@marketingx.nl",
+    "phone": "+31 74 123 4567",
     "address": {
-      "street": "Straatnaam 1",
-      "city": "Plaatsnaam",
-      "zip": "1234 AB"
+      "street": "Prins Bernhardplantsoen 106",
+      "city": "Hengelo",
+      "zip": "7555 DB"
     }
   },
 
   "social": {
-    "facebook": "",
-    "instagram": "",
-    "linkedin": ""
+    "instagram": "https://instagram.com/marketingx.nl",
+    "linkedin": "https://linkedin.com/company/marketingx"
   },
 
   "gtm": {
-    "containerId": "GTM-XXXXXXX"
+    "containerId": ""
   },
 
   "recaptcha": {
-    "siteKey": "6Le-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    "siteKey": ""
   },
 
   "branding": {
-    "primaryColor": "#1a1a2e",
-    "secondaryColor": "#e94560",
-    "accentColor": "#0f3460",
-    "fontHeading": "'DM Sans', sans-serif",
-    "fontBody": "'DM Sans', sans-serif"
-  }
+    "red": "#E5202E",
+    "orange": "#F47B20",
+    "black": "#0C0C10",
+    "cream": "#F5F3EE",
+    "fontHeading": "'Red Hat Display', sans-serif",
+    "fontBody": "'Inter', sans-serif"
+  },
+
+  "brands": [
+    {
+      "name": "ForwardX",
+      "tagline": "Webdesign & Conversie",
+      "description": "Websites die niet alleen mooi zijn, maar ook presteren. Van concept tot conversie-geoptimaliseerd eindresultaat voor lokale ondernemers.",
+      "icon": "arrow-right",
+      "color": "#F47B20"
+    },
+    {
+      "name": "LocalX",
+      "tagline": "Lokale SEO & Zichtbaarheid",
+      "description": "Domineer de lokale zoekresultaten. Multi-location Google Business Profile management en lokale SEO op het hoogste niveau.",
+      "icon": "map-pin",
+      "color": "#F47B20"
+    },
+    {
+      "name": "ReviewChicken",
+      "tagline": "Review Automation & Software",
+      "description": "Automatiseer je reviewstrategie. Slimme messaging flows en API-first review management die écht resultaat levert.",
+      "icon": "message-circle",
+      "color": "#F47B20"
+    }
+  ]
 }

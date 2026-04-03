@@ -1,25 +1,29 @@
 ---
 layout: layouts/base.njk
 pageTitle: Contact
-pageDescription: "Neem contact op met Klantnaam — wij helpen u graag"
+pageDescription: "Neem contact op met MarketingX — wij helpen je graag verder"
 hasForm: true
 extraCss: form.css
 permalink: /contact/
 ---
 
-<section class="section">
+<section class="section contact-hero">
   <div class="container">
-    <div class="section__header">
-      <h1>Contact</h1>
-      <p class="section__subtitle">Vul het formulier in of neem direct contact op.</p>
+    <div class="section__header reveal">
+      <span class="section__eyebrow">Contact</span>
+      <h1>Laten we kennismaken</h1>
+      <p class="section__subtitle">
+        Benieuwd wat MarketingX voor jouw bedrijf kan betekenen?
+        Vul het formulier in of neem direct contact op.
+      </p>
     </div>
 
     <div class="contact-layout">
-      <div class="contact-layout__form">
+      <div class="contact-layout__form reveal">
         {% include "components/contact-form.njk" %}
       </div>
 
-      <div class="contact-layout__info">
+      <div class="contact-layout__info reveal" style="--stagger-index: 1">
         <div class="contact-info">
           <h3>Contactgegevens</h3>
           <ul>
