@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects
+# Voeg hier redirects toe bij site-migratie
+# Format: /oude-url /nieuwe-url 301
+#
+# Voorbeelden:
+# /old-page /new-page 301
+# /blog/old-post /blog/new-post 301
+# /wp-content/* /assets/:splat 301

@@ -1,0 +1,38 @@
+{
+  "name": "Klantnaam",
+  "url": "https://www.klantnaam.nl",
+  "description": "Korte beschrijving van het bedrijf voor SEO",
+  "language": "nl",
+
+  "contact": {
+    "email": "info@klantnaam.nl",
+    "phone": "+31 6 12345678",
+    "address": {
+      "street": "Straatnaam 1",
+      "city": "Plaatsnaam",
+      "zip": "1234 AB"
+    }
+  },
+
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  },
+
+  "gtm": {
+    "containerId": "GTM-XXXXXXX"
+  },
+
+  "recaptcha": {
+    "siteKey": "6Le-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  },
+
+  "branding": {
+    "primaryColor": "#1a1a2e",
+    "secondaryColor": "#e94560",
+    "accentColor": "#0f3460",
+    "fontHeading": "'DM Sans', sans-serif",
+    "fontBody": "'DM Sans', sans-serif"
+  }
+}

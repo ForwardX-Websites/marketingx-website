@@ -1,0 +1,48 @@
+<section class="contact-form" id="contact-form">
+  <form class="form" id="contactForm" action="/api/contact" method="POST" novalidate>
+
+    <div class="form__group">
+      <label class="form__label" for="name">Naam *</label>
+      <input class="form__input" type="text" id="name" name="name" required autocomplete="name" placeholder="Uw volledige naam">
+      <span class="form__error" data-error="name"></span>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="email">E-mailadres *</label>
+      <input class="form__input" type="email" id="email" name="email" required autocomplete="email" placeholder="uw@email.nl">
+      <span class="form__error" data-error="email"></span>
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="phone">Telefoonnummer</label>
+      <input class="form__input" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+31 6 12345678">
+    </div>
+
+    <div class="form__group form__group--full">
+      <label class="form__label" for="message">Bericht *</label>
+      <textarea class="form__textarea" id="message" name="message" required rows="5" placeholder="Waar kunnen we u mee helpen?"></textarea>
+      <span class="form__error" data-error="message"></span>
+    </div>
+
+    <!-- Honeypot — onzichtbaar voor gebruikers, vangt bots -->
+    <div class="form__honeypot" aria-hidden="true">
+      <input type="text" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <!-- reCAPTCHA token wordt via JS ingevuld -->
+    <input type="hidden" name="recaptcha_token" id="recaptchaToken">
+
+    <div class="form__group form__group--full">
+      <button class="form__submit" type="submit">
+        <span class="form__submit-text">Verstuur bericht</span>
+        <span class="form__submit-loading" hidden>Bezig met versturen...</span>
+      </button>
+    </div>
+
+    <div class="form__feedback" id="formFeedback" hidden></div>
+
+    <p class="form__recaptcha-notice">
+      Beschermd door reCAPTCHA. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy</a> &amp; <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Voorwaarden</a>.
+    </p>
+  </form>
+</section>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  {% if site.gtm.containerId %}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm.containerId }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  {% endif %}
+
+  {% include "components/header.njk" %}
+
+  <main class="site-main" id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "components/footer.njk" %}
+
+  {% include "partials/scripts.njk" %}
+</body>
+</html>

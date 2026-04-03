@@ -1,0 +1,16 @@
+<nav class="site-nav" aria-label="Hoofdnavigatie">
+  <ul class="site-nav__list">
+    <li class="site-nav__item">
+      <a href="/" class="site-nav__link {% if page.url == '/' %}is-active{% endif %}">Home</a>
+    </li>
+    <li class="site-nav__item">
+      <a href="/over-ons/" class="site-nav__link {% if page.url == '/over-ons/' %}is-active{% endif %}">Over ons</a>
+    </li>
+    <li class="site-nav__item">
+      <a href="/diensten/" class="site-nav__link {% if page.url == '/diensten/' %}is-active{% endif %}">Diensten</a>
+    </li>
+    <li class="site-nav__item">
+      <a href="/contact/" class="site-nav__link site-nav__link--cta {% if page.url == '/contact/' %}is-active{% endif %}">Contact</a>
+    </li>
+  </ul>
+</nav>

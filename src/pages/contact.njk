@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+pageTitle: Contact
+pageDescription: "Neem contact op met Klantnaam — wij helpen u graag"
+hasForm: true
+extraCss: form.css
+permalink: /contact/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <h1>Contact</h1>
+      <p class="section__subtitle">Vul het formulier in of neem direct contact op.</p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-layout__form">
+        {% include "components/contact-form.njk" %}
+      </div>
+
+      <div class="contact-layout__info">
+        <div class="contact-info">
+          <h3>Contactgegevens</h3>
+          <ul>
+            <li>
+              <strong>E-mail</strong>
+              <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+            </li>
+            <li>
+              <strong>Telefoon</strong>
+              <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a>
+            </li>
+            <li>
+              <strong>Adres</strong>
+              <span>{{ site.contact.address.street }}<br>{{ site.contact.address.zip }} {{ site.contact.address.city }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

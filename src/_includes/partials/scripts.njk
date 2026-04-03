@@ -1,0 +1,8 @@
+<!-- Main JS -->
+<script src="/assets/js/main.js" defer></script>
+
+<!-- reCAPTCHA v3 — alleen laden op pagina's met formulier -->
+{% if hasForm %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ site.recaptcha.siteKey }}" defer></script>
+<script src="/assets/js/form-handler.js" defer></script>
+{% endif %}
